@@ -1,1 +1,8 @@
-# slack-bot
+# Slack auto post app
+A Slack, app needs to be created where it will listen for a post to be made in a specific channel then it will repost it in a separate Slack workspace. The post should not look like it came from a bot but rather should look like it came from the user who posted it. This app should be customized from the Slack app settings page.
+
+## Design
+### Configuration
+A Slack app is a functional extension to Slack Workspace. The app can be hosted locally or on the cloud, configured to have access to Slack backend and Workspace. The app needs access to the backend for event receiving and posting capability. It needs to be installed on a Workspace such that it can interact with this Workspace. See Tutorial: [bolt-python getting start](https://slack.dev/bolt-python/tutorial/getting-started-http), [LinkedIn course](https://www.linkedin.com/learning/building-bots-with-node-js/handling-events-and-sending-messages?autoSkip=true&resume=false&u=2011276).
+### App design
+Slack app can be an [HTTP server](https://api.slack.com/apis/connections/events-api), configured by Event Subscriptions. Slack app can also be a [WebSocket server](https://api.slack.com/apis/connections/socket), configured by Socket Mode. Both are listening on localhost:3000/slack/events. Use [ngrok](https://dashboard.ngrok.com/get-started/setup) as the proxy to proxy requests between localhost and Slack backend.
